@@ -150,15 +150,10 @@ jobs:
           cd main
           sed -i '' '/YTIcons/d' Makefile
 
-      - name: Remove YouTubeHeader from Makefile
+      - name: Remove duplicate MLPlayerEventCenter from uYouPlus.h
         run: |
-          cd main
-          sed -i '' '/YouTubeHeader/d' Makefile
-
-      - name: Patch duplicate MLPlayerEventCenter
-        run: |
-          sed -i '' 's/@interface MLPlayerEventCenter/@interface MLPlayerEventCenter_DISABLED/' main/Tweaks/YouTubeHeader/MLPlayerEventCenter.h
-
+          sed -i '' '/@interface MLPlayerEventCenter/,/@end/d' main/Sources/uYouPlus.h
+      
       - name: Fix compiling & Build Package
         id: build_package
         run: |

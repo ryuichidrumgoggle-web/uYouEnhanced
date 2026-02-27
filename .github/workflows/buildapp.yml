@@ -1,11 +1,6 @@
 # Original idea by @ISnackable. Thanks to him for handling the hardest parts!
 # https://github.com/ISnackable/YTCubePlus/blob/main/.github/workflows/Build.yml
 
-name: Add PSHeader   # ← ここを追加
-  run: |
-    mkdir -p $THEOS/include/PSHeader
-    cp path/to/Misc.h $THEOS/include/PSHeader/
-
 name: Build and Release uYouEnhanced
 
 on:

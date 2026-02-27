@@ -137,6 +137,14 @@ jobs:
           THEOS: ${{ github.workspace }}/theos
           YOUTUBE_URL: ${{ env.URL_YT }}
 
+      - name: Add PSHeader (Fix YTABConfig build)   # ← ここ追加
+        run: |
+          git clone https://github.com/PoomSmart/PSHeader.git
+          mkdir -p $THEOS/include/PSHeader
+          cp -r PSHeader/* $THEOS/include/PSHeader/
+        env:
+          THEOS: ${{ github.workspace }}/theos
+
       - name: Fix compiling & Build Package
         id: build_package
         run: |

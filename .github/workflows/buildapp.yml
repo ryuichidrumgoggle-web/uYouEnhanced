@@ -145,6 +145,11 @@ jobs:
         env:
           THEOS: ${{ github.workspace }}/theos
 
+name: Remove YTIcons from Makefile
+  run: |
+    cd main
+    sed -i '' '/YTIcons/d' Makefile
+
       - name: Fix compiling & Build Package
         id: build_package
         run: |

@@ -1,15 +1,6 @@
 # Original idea by @ISnackable. Thanks to him for handling the hardest parts!
 # https://github.com/ISnackable/YTCubePlus/blob/main/.github/workflows/Build.yml
 
-name: Clone PSHeader
-  run: |
-    git clone https://github.com/PoomSmart/PSHeader.git
-    mkdir -p $THEOS/include/PSHeader
-    cp -r PSHeader/* $THEOS/include/PSHeader/
-
-name: Build
-  run: make package
-
 name: Build and Release uYouEnhanced
 
 on:

@@ -155,9 +155,9 @@ jobs:
           cd main
           sed -i '' '/YouTubeHeader/d' Makefile
 
-      - name: Remove YouTubeHeader folder
+      - name: Patch duplicate MLPlayerEventCenter
         run: |
-          rm -rf main/Tweaks/YouTubeHeader
+          sed -i '' 's/@interface MLPlayerEventCenter/@interface MLPlayerEventCenter_DISABLED/' main/Tweaks/YouTubeHeader/MLPlayerEventCenter.h
 
       - name: Fix compiling & Build Package
         id: build_package

@@ -150,6 +150,11 @@ jobs:
           cd main
           sed -i '' '/YTIcons/d' Makefile
 
+      - name: Remove YouTubeHeader from Makefile
+        run: |
+          cd main
+          sed -i '' '/YouTubeHeader/d' Makefile
+
       - name: Fix compiling & Build Package
         id: build_package
         run: |

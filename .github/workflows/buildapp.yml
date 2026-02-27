@@ -155,6 +155,10 @@ jobs:
           cd main
           sed -i '' '/YouTubeHeader/d' Makefile
 
+      - name: Remove YouTubeHeader folder
+        run: |
+          rm -rf main/Tweaks/YouTubeHeader
+
       - name: Fix compiling & Build Package
         id: build_package
         run: |
